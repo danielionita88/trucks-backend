@@ -5,6 +5,12 @@ class Api::V1::UsersController < ApplicationController
         render json: users
     end
 
+    def login
+    end
+
+    def current_user
+    end
+
     def create
         user= User.create(user_params)
         if user.valid?
@@ -17,7 +23,6 @@ class Api::V1::UsersController < ApplicationController
     def liked_posts
         user=User.find(params[:id])
         render json: user.liked_posts
-
     end
 
 
