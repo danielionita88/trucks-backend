@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'users/:id/liked_posts', to: 'users#liked_posts'
       post '/login', to: 'users#login'
       post '/signup', to: 'users#create'
+      get '/current_user', to: 'users#show'
     end
   end
 end
