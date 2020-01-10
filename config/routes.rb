@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create]
       resources :posts, only: [:index, :create]
       get 'users/:id/liked_posts', to: 'users#liked_posts'
+      get 'users/:id/posts', to: 'users#posts'
       post '/login', to: 'users#login'
       post '/signup', to: 'users#create'
       get '/current_user', to: 'users#show'

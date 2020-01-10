@@ -40,11 +40,21 @@ class Api::V1::UsersController < ApplicationController
 
     def liked_posts
         user=User.find(params[:id])
-        render json: user.liked_posts
+        render json: {u}
+    end
+
+    def posts 
+        user=User.find(params[:id])
+        photos = user.posts.map{|post| photos(post)}
+        render json:{posts:user.posts, photos: photos} 
     end
 
 
     private
+
+    def photos(post)
+        post.photos.map{|photo| url_for(photo)}
+    end
 
     def user_params
         params.require(:user).permit(:username,:password, :password_confirmation, :email)
