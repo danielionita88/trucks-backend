@@ -40,7 +40,7 @@ class Api::V1::UsersController < ApplicationController
 
     def liked_posts
         user=User.find(params[:id])
-        render json: {u}
+        render json: user.liked_posts
     end
 
     def posts 
