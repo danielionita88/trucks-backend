@@ -6,4 +6,5 @@ class PostSerializer < ActiveModel::Serializer
     object.photos.map{|photo| rails_blob_url(photo, only_path:true)}
   end
 
+
 end
