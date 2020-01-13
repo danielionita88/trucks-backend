@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create]
-      resources :posts, only: [:index, :create]
+      resources :posts, only: [:index, :create, :destroy]
       get 'users/:id/liked_posts', to: 'users#liked_posts'
       get 'users/:id/posts', to: 'users#posts'
       post '/login', to: 'users#login'
