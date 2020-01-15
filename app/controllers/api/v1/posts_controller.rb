@@ -15,10 +15,19 @@ class Api::V1::PostsController < ApplicationController
         end
     end
 
+    def show
+        post=Post.find(params[:id])
+        render json: post
+    end
+
     def destroy
         post=Post.find(params[:id])
         post.destroy()
         render json: {message: 'delete succesful'}
+    end
+
+    def google_maps
+        render json: {key: MAPS_SECRET}
     end
 
 
