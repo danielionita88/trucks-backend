@@ -22,4 +22,3 @@
 /config/master.key
 
 secrets.yml
-credentials.yml.enc
