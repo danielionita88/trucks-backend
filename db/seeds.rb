@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.create(username: 'daniel', email: '123@123.com', password: '1234', password_confirmation: '1234')
+User.create(username: 'daniel', email: '123@123.com', password: '1234', password_confirmation: '1234')
 # User.create(username: 'john', email: '12345@12345.com', password: '1234', password_confirmation: '1234')
 # Post.create(title: 'Volvo for sale', make: 'Volvo', model: 'VNL670', model_year: 2019, price: 110000, odometer: 135000, title_status: 'clean', city: 'Chicago', description: 'Volvo for sale, good condition', user_id: 1)
 # Post.create(title: 'Volvo for sale', make: 'Volvo', model: 'VNL670', model_year: 2019, price: 150000, odometer: 1000, title_status: 'clean', city: 'Chicago', description: 'Volvo for sale, good condition', user_id: 1)
