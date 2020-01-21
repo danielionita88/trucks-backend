@@ -27,15 +27,19 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
-    
-
     def create
-        user= User.create(user_params)
-        if user.valid?
+        user= User.find_by(username: params[:user][:username])
+        if user 
             token = JWT.encode({id: user.id}, 'secret', 'HS256')
             render json: {id: user.id, username: user.username, token: token}, status: :created
-        else
+            
+        else user=User.create(user_params)
+            if user.valid?
+            token = JWT.encode({id: user.id}, 'secret', 'HS256')
+            render json: {id: user.id, username: user.username, token: token}, status: :created
+            else 
             render json:{error: 'failed to create user'}, status: :not_acceptable
+            end
         end
     end
 
